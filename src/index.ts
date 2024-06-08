@@ -17,4 +17,4 @@ export * from "./lib/structures/builders/option/ChannelOptionBuilder.js";
 export * from "./lib/structures/builders/option/OptionBuilder.js";
 
 // Enums
-export * from './enums.js'
+export * from "./enums.js";
