@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2024-06-08
+
+### 🐛 Bug Fixes
+
+- Change import paths
+- [**breaking**] Change to singular entry file
+
 ## [0.1.4] - 2024-06-08
 
 ### 🐛 Bug Fixes
