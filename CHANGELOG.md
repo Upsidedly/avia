@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.3] - 2024-06-08
+
+### 🐛 Bug Fixes
+
+- Symbol renaming issue
+
 ## [0.1.2] - 2024-06-08
 
 ### 🐛 Bug Fixes
