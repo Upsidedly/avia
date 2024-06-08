@@ -4,17 +4,26 @@ import { ClientListeners } from "lilybird";
 import { Component } from "./Component.js";
 
 export interface ListenerMeta<EventName extends EventString = EventString> {
-  event: Event<EventName, Required<ClientListeners<DefaultTransformers>>>['event']
+  event: Event<
+    EventName,
+    Required<ClientListeners<DefaultTransformers>>
+  >["event"];
 }
 
-export class Listener<EventName extends EventString = EventString> extends Component {
-    public name?: string;
-    public meta: ListenerMeta<EventName> = { event: '' as EventName };
-    public onRun(..._: Parameters<Event<EventName, Required<ClientListeners<DefaultTransformers>>>['run']>) {};
-    constructor(name?: string) {
-        super();
-        this.name = name;
-    }
+export class Listener<
+  EventName extends EventString = EventString,
+> extends Component {
+  public name?: string;
+  public meta: ListenerMeta<EventName> = { event: "" as EventName };
+  public onRun(
+    ..._: Parameters<
+      Event<EventName, Required<ClientListeners<DefaultTransformers>>>["run"]
+    >
+  ) {}
+  constructor(name?: string) {
+    super();
+    this.name = name;
+  }
 }
 
 export type EventString =

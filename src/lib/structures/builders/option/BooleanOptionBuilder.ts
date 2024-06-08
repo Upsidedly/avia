@@ -1,14 +1,9 @@
 import { OptionBuilder } from "./OptionBuilder.js";
-import {
-  ApplicationCommand,
-  ApplicationCommandOptionType,
-} from "lilybird";
+import { ApplicationCommand, ApplicationCommandOptionType } from "lilybird";
 
 export class BooleanOptionBuilder extends OptionBuilder {
   constructor(
-    data: Partial<
-      Omit<ApplicationCommand.Option.Structure, "type">
-    > = {},
+    data: Partial<Omit<ApplicationCommand.Option.Structure, "type">> = {},
   ) {
     super({
       ...data,

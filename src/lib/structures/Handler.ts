@@ -253,7 +253,9 @@ export class Handler extends Component {
       for (const [name, listener] of this.listenerStore) {
         if (name === "interactionCreate") {
           interactionCreateListeners.push(
-            listener.onRun.bind(listener) as Listener<"interactionCreate">["onRun"],
+            listener.onRun.bind(
+              listener,
+            ) as Listener<"interactionCreate">["onRun"],
           );
           continue;
         }
@@ -268,12 +270,12 @@ export class Handler extends Component {
       }
     }
 
-    listeners['interactionCreate'] = async (interaction) => {
+    listeners["interactionCreate"] = async (interaction) => {
       await this.onInteraction(interaction);
       await Promise.all(interactionCreateListeners.map((l) => l(interaction)));
     };
 
-    listeners['messageCreate'] = async (message) => {
+    listeners["messageCreate"] = async (message) => {
       await this.onMessage(message);
       await Promise.all(messageCreateListeners.map((l) => l(message)));
     };

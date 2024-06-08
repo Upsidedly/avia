@@ -12,7 +12,9 @@ import { Component } from "./Component.js";
 import { CommandBuilder } from "./builders/CommandBuilder.js";
 import { MessageCommandArgumentType } from "src/enums.js";
 
-export function OptionalType<const T extends MessageCommandArgumentType>(type: T): { type: T; optional: true } {
+export function OptionalType<const T extends MessageCommandArgumentType>(
+  type: T,
+): { type: T; optional: true } {
   return {
     type,
     optional: true,
@@ -127,10 +129,7 @@ export class Command<
   public getData(builder: CommandBuilder) {
     return builder;
   }
-  async onMessage(
-    _: Message,
-    __: InferArguments<Args>,
-  ): Promise<unknown> {
+  async onMessage(_: Message, __: InferArguments<Args>): Promise<unknown> {
     return;
   }
   async onMessageContext(

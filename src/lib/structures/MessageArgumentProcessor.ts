@@ -116,7 +116,7 @@ export abstract class MessageArgumentProcessor {
             ? [key, ...type.aliases].find((alias) => args[alias] !== undefined)
             : key;
         if (alias === undefined) {
-            throw container.logger.error(``)
+          throw container.logger.error(``);
           throw new Error(`Missing named argument: ${key}`);
         }
         namedObj[key] = await MessageArgumentValidator.validate(

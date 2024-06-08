@@ -13,6 +13,7 @@
     "start": "bun .",
     "dev": "bun --watch .",
     "build": "bun run build.mjs",
+    "format": "prettier --write .",
     "prepublishOnly": "bun run build"
   },
   "keywords": [
@@ -30,6 +31,7 @@
     "bun": ">=1.1.0"
   },
   "dependencies": {
+    "@favware/cliff-jumper": "^4.0.2",
     "@lilybird/handlers": "^0.5.0",
     "@lilybird/jsx": "^0.3.0",
     "@lilybird/transformers": "^0.4.1",

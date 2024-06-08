@@ -1,5 +1,5 @@
 declare module "bun" {
-    interface Env {
-        TOKEN: string
-    }
+  interface Env {
+    TOKEN: string;
+  }
 }

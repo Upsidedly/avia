@@ -11,14 +11,16 @@ export abstract class MessageArgumentValidator {
     type: T,
     rawString: string | boolean | undefined,
   ): Promise<InferMap[T]> {
-    rawString ??= '';
-    if (typeof rawString === 'boolean') {
-      if (type === MessageCommandArgumentType.BOOLEAN) return rawString as InferMap[T];
+    rawString ??= "";
+    if (typeof rawString === "boolean") {
+      if (type === MessageCommandArgumentType.BOOLEAN)
+        return rawString as InferMap[T];
       else throw new Error(`Invalid argument ${nameOrIndex}`);
     }
     switch (type) {
       case MessageCommandArgumentType.STRING:
-        if (rawString.length === 0) throw new Error(`Invalid string argument ${nameOrIndex}`);
+        if (rawString.length === 0)
+          throw new Error(`Invalid string argument ${nameOrIndex}`);
         return rawString as InferMap[T];
 
       case MessageCommandArgumentType.INTEGER: {
