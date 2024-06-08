@@ -1,11 +1,8 @@
-# Welcome to Lilybird
+# Avia
+Avia is an intuitive framework for Lilybird
 
-## Getting Started
-
-To run your bot you can run:
-
-```sh
-bun run start
+## Installation
+```bash
+bun add avia-origin
 ```
-
-> Generated with @lilybird/create 0.2.1.
+(It is a bun-only framework)
