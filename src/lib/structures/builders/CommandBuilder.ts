@@ -69,7 +69,7 @@ export class CommandBuilder {
     const builder = new IntegerOptionBuilder();
     f(builder);
     this.#data.options ??= [];
-    this.#data.options.push(builder.data);
+    this.#data.options.push(builder.pdata);
     return this;
   }
 
@@ -77,7 +77,7 @@ export class CommandBuilder {
     const builder = new NumberOptionBuilder();
     f(builder);
     this.#data.options ??= [];
-    this.#data.options.push(builder.data);
+    this.#data.options.push(builder.pdata);
     return this;
   }
 

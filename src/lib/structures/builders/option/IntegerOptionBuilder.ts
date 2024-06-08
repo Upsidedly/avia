@@ -10,10 +10,10 @@ export class IntegerOptionBuilder extends OptionBuilder {
       ...data,
       type: ApplicationCommandOptionType.INTEGER,
     } as ApplicationCommand.Option.NumericStructure);
-    this.#data = super.data as ApplicationCommand.Option.NumericStructure;
+    this.#data = super.pdata as ApplicationCommand.Option.NumericStructure;
   }
 
-  override get data() {
+  override get pdata() {
     return this.#data as Readonly<ApplicationCommand.Option.NumericStructure>;
   }
 
