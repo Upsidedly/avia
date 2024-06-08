@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1] - 2024-06-08
+
+### 🐛 Bug Fixes
+
+- Issue with dist
+
+### ⚙️ Miscellaneous Tasks
+
+- Add cliff.toml
+
 ## [0.1.0] - 2024-06-08
 
 ### 🚀 Features
