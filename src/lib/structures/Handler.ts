@@ -13,7 +13,7 @@ import { Listener } from "./Listener.js";
 import { parse } from "shell-quote";
 import minimist from "minimist";
 import { filterMap } from "../utils.js";
-import { CommandBuilder } from "./builders/CommandBuilder.js";
+import { CommandBuilder } from "../../builders.js";
 import { Component } from "./Component.js";
 import { MessageArgumentProcessor } from "./MessageArgumentProcessor.js";
 

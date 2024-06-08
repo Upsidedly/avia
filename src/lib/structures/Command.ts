@@ -9,7 +9,7 @@ import {
 } from "@lilybird/transformers";
 import { Role } from "lilybird";
 import { Component } from "./Component.js";
-import { CommandBuilder } from "./builders/CommandBuilder.js";
+import { CommandBuilder } from "../../builders.js";
 import { MessageCommandArgumentType } from "src/enums.js";
 
 export function OptionalType<const T extends MessageCommandArgumentType>(
