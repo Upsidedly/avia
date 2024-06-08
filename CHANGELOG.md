@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1] - 2024-06-08
+
+### 🐛 Bug Fixes
+
+- Update script
+
 ## [1.0.0] - 2024-06-08
 
 ### 🐛 Bug Fixes
