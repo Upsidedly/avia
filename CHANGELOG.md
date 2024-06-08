@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2024-06-08
+
+### 🐛 Bug Fixes
+
+- Private property issues in derivatives
+
 ## [0.1.1] - 2024-06-08
 
 ### 🐛 Bug Fixes
@@ -22,4 +28,3 @@ All notable changes to this project will be documented in this file.
 
 - Fmt
 - Update README.md
-
