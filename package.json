@@ -14,7 +14,7 @@
     "dev": "bun --watch .",
     "build": "bun run build.mjs",
     "format": "prettier --write .",
-    "prepublishOnly": "bun run build",
+    "prepublishOnly": "rm -rf dist && bun run build",
     "cliffjump": "bun format && bun cj"
   },
   "keywords": [
