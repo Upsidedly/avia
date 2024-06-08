@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.4] - 2024-06-08
+
+### 🐛 Bug Fixes
+
+- Remove private property
+
 ## [0.1.3] - 2024-06-08
 
 ### 🐛 Bug Fixes
