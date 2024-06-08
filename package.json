@@ -22,6 +22,10 @@
     "framework",
     "discord"
   ],
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "exports": {
     ".": "./dist/index.js",
     "./builders": "./dist/builders.js",
