@@ -1,7 +1,7 @@
 import dts from "bun-plugin-dts";
 
 await Bun.build({
-  entrypoints: ["./src/index.ts", "./src/enums.ts", "./src/builders.ts"],
+  entrypoints: ["./src/index.ts"],
   outdir: "./dist",
   plugins: [
     dts({ compilationOptions: { preferredConfigPath: "./tsconfig.json" } }),

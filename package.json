@@ -28,9 +28,7 @@
     "dist/**/*.d.ts"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./builders": "./dist/builders.js",
-    "./enums": "./dist/enums.js"
+    ".": "./dist/index.js"
   },
   "engines": {
     "bun": ">=1.1.0"
