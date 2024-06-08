@@ -1,7 +1,7 @@
 {
   "name": "avia-origin",
   "description": "Intuitive framework for the lilybird library",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "module",
   "author": {
     "name": " Upsided",
@@ -31,7 +31,6 @@
     "bun": ">=1.1.0"
   },
   "dependencies": {
-    "@favware/cliff-jumper": "^4.0.2",
     "@lilybird/handlers": "^0.5.0",
     "@lilybird/jsx": "^0.3.0",
     "@lilybird/transformers": "^0.4.1",
@@ -45,6 +44,7 @@
     "shell-quote": "^1.8.1"
   },
   "devDependencies": {
+    "@favware/cliff-jumper": "^4.0.2",
     "bun-plugin-dts": "^0.2.3",
     "prettier": "3.3.1",
     "typescript": "^5.4.5"
