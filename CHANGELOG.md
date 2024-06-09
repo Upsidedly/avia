@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2024-06-09
+
+### 🚜 Refactor
+
+- Remove useless dep
+
 ## [1.1.0] - 2024-06-09
 
 ### 🚀 Features
