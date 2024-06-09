@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2024-06-09
+
+### ⚙️ Miscellaneous Tasks
+
+- New format:push script
+- Format
+- Format
+
 ## [1.1.1] - 2024-06-09
 
 ### 🚜 Refactor
