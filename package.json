@@ -15,8 +15,9 @@
     "test": "bun run ./src/test.ts",
     "build": "bun run build.mjs",
     "format": "prettier --write .",
+    "format:push": "prettier --write . && git add . && git commit -m 'chore: format' && git push",
     "prepublishOnly": "rm -rf dist && bun run build",
-    "cliffjump": "bun format && bun cj"
+    "cliffjump": "bun format:push && bun cj"
   },
   "keywords": [
     "bun",
