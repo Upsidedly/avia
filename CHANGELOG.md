@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2024-06-09
+
+### 🚀 Features
+
+- TypeObjects
+- New builders, MentionableOptionBuilder, UserOptionBuilder
+
+### 🐛 Bug Fixes
+
+- Useless import
+
+### 🚜 Refactor
+
+- Organisation
+
 ## [1.0.2] - 2024-06-09
 
 ### 🐛 Bug Fixes
