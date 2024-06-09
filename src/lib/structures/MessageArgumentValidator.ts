@@ -1,5 +1,5 @@
 import { GuildMember, Message, User } from "@lilybird/transformers";
-import { InferMap } from "./Command.js";
+import { InferMap } from "./type-objects/MessageCommandArgumentTypeObject.js";
 import { container } from "../container.js";
 import { channelFactory } from "node_modules/@lilybird/transformers/dist/factories/channel.js";
 import { MessageCommandArgumentType } from "src/enums.js";

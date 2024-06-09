@@ -1,10 +1,8 @@
 import { Message } from "@lilybird/transformers";
 import {
   Command,
-  type InferArguments,
-  type InferMap,
-  type MessageCommandArguments,
 } from "../structures/Command.js";
+import { InferArguments, InferMap, MessageCommandArguments } from "./type-objects/MessageCommandArgumentTypeObject.js";
 import { MessageArgumentValidator } from "../structures/MessageArgumentValidator.js";
 import { container } from "../container.js";
 
@@ -17,7 +15,7 @@ export abstract class MessageArgumentProcessor {
   ): Promise<void> {
     const requireds = types.positional?.filter(
       (e) =>
-        typeof e === "number" || e.optional !== true || e.default !== undefined,
+        e.meta.default === undefined && e.meta.optional !== true,
     );
 
     // Inbalance, cannot run
@@ -40,11 +38,11 @@ export abstract class MessageArgumentProcessor {
           );
           continue;
         }
-        if (type.optional === true || type.default !== undefined) {
+        if (type.meta.optional === true || type.default !== undefined) {
           foundOptional = true;
           posArray.push(
-            type.default !== undefined
-              ? type.default
+            type.meta.default !== undefined
+              ? type.meta.default
               : arg === undefined
                 ? undefined
                 : await MessageArgumentValidator.validate(
@@ -81,25 +79,25 @@ export abstract class MessageArgumentProcessor {
       } else if (type.default !== undefined) {
         const alias =
           type.aliases && type.aliases.length > 1
-            ? [key, ...type.aliases].find((alias) => args[alias] !== undefined)
+            ? [key, ...type.meta.aliases].find((alias) => args[alias] !== undefined)
             : key;
         if (alias === undefined) {
-          namedObj[key] = type.default;
+          namedObj[key] = type.meta.default;
           continue;
         }
         namedObj[key] =
           !alias || args[key] === undefined
-            ? type.default
+            ? type.meta.default
             : await MessageArgumentValidator.validate(
                 message,
                 key,
                 type.type,
                 args[alias],
               );
-      } else if (type.optional === true) {
+      } else if (type.meta.optional === true) {
         const alias =
           type.aliases && type.aliases.length > 1
-            ? [key, ...type.aliases].find((alias) => args[alias] !== undefined)
+            ? [key, ...type.meta.aliases].find((alias) => args[alias] !== undefined)
             : key;
         namedObj[key] =
           !alias || args[alias] === undefined
@@ -113,10 +111,9 @@ export abstract class MessageArgumentProcessor {
       } else {
         const alias =
           type.aliases && type.aliases.length > 1
-            ? [key, ...type.aliases].find((alias) => args[alias] !== undefined)
+            ? [key, ...type.meta.aliases].find((alias) => args[alias] !== undefined)
             : key;
         if (alias === undefined) {
-          throw container.logger.error(``);
           throw new Error(`Missing named argument: ${key}`);
         }
         namedObj[key] = await MessageArgumentValidator.validate(
