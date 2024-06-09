@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2024-06-09
+
+### 🐛 Bug Fixes
+
+- Broken builders
+
 ## [1.0.1] - 2024-06-08
 
 ### 🐛 Bug Fixes
