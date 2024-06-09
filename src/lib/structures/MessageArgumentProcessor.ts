@@ -4,7 +4,6 @@ import {
 } from "../structures/Command.js";
 import { InferArguments, InferMap, MessageCommandArguments } from "./type-objects/MessageCommandArgumentTypeObject.js";
 import { MessageArgumentValidator } from "../structures/MessageArgumentValidator.js";
-import { container } from "../container.js";
 
 export abstract class MessageArgumentProcessor {
   static async positional(
