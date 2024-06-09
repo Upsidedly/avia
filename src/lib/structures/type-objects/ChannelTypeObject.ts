@@ -26,7 +26,9 @@ export class ChannelTypeObject<
   }
 
   channelTypes(channelTypes: ChannelType[]): this {
-    this.meta.validators.set('channelTypes', (ch: Channel) => channelTypes.includes(ch.type));
+    this.meta.validators.set("channelTypes", (ch: Channel) =>
+      channelTypes.includes(ch.type),
+    );
     return this;
   }
 }

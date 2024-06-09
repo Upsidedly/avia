@@ -1,8 +1,10 @@
 import { Message } from "@lilybird/transformers";
+import { Command } from "../structures/Command.js";
 import {
-  Command,
-} from "../structures/Command.js";
-import { InferArguments, InferMap, MessageCommandArguments } from "./type-objects/MessageCommandArgumentTypeObject.js";
+  InferArguments,
+  InferMap,
+  MessageCommandArguments,
+} from "./type-objects/MessageCommandArgumentTypeObject.js";
 import { MessageArgumentValidator } from "../structures/MessageArgumentValidator.js";
 
 export abstract class MessageArgumentProcessor {
@@ -13,8 +15,7 @@ export abstract class MessageArgumentProcessor {
     types: MessageCommandArguments,
   ): Promise<void> {
     const requireds = types.positional?.filter(
-      (e) =>
-        e.meta.default === undefined && e.meta.optional !== true,
+      (e) => e.meta.default === undefined && e.meta.optional !== true,
     );
 
     // Inbalance, cannot run
@@ -78,7 +79,9 @@ export abstract class MessageArgumentProcessor {
       } else if (type.default !== undefined) {
         const alias =
           type.aliases && type.aliases.length > 1
-            ? [key, ...type.meta.aliases].find((alias) => args[alias] !== undefined)
+            ? [key, ...type.meta.aliases].find(
+                (alias) => args[alias] !== undefined,
+              )
             : key;
         if (alias === undefined) {
           namedObj[key] = type.meta.default;
@@ -96,7 +99,9 @@ export abstract class MessageArgumentProcessor {
       } else if (type.meta.optional === true) {
         const alias =
           type.aliases && type.aliases.length > 1
-            ? [key, ...type.meta.aliases].find((alias) => args[alias] !== undefined)
+            ? [key, ...type.meta.aliases].find(
+                (alias) => args[alias] !== undefined,
+              )
             : key;
         namedObj[key] =
           !alias || args[alias] === undefined
@@ -110,7 +115,9 @@ export abstract class MessageArgumentProcessor {
       } else {
         const alias =
           type.aliases && type.aliases.length > 1
-            ? [key, ...type.meta.aliases].find((alias) => args[alias] !== undefined)
+            ? [key, ...type.meta.aliases].find(
+                (alias) => args[alias] !== undefined,
+              )
             : key;
         if (alias === undefined) {
           throw new Error(`Missing named argument: ${key}`);

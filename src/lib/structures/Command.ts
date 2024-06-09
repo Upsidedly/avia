@@ -6,7 +6,10 @@ import {
 } from "@lilybird/transformers";
 import { Component } from "./Component.js";
 import { CommandBuilder } from "./builders/CommandBuilder.js";
-import { InferArguments, MessageCommandArguments } from "./type-objects/MessageCommandArgumentTypeObject.js";
+import {
+  InferArguments,
+  MessageCommandArguments,
+} from "./type-objects/MessageCommandArgumentTypeObject.js";
 
 export type CommandInteraction = Interaction<
   ApplicationCommandData<undefined>,

@@ -7,7 +7,7 @@ export class IntegerOptionBuilder extends OptionBuilder {
   override get data(): ApplicationCommand.Option.NumericStructure {
     return this.#data as Readonly<ApplicationCommand.Option.NumericStructure>;
   }
-  
+
   constructor(
     data: Partial<Omit<ApplicationCommand.Option.ChoiceStructure, "type">> = {},
   ) {

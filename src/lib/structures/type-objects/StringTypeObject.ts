@@ -2,8 +2,8 @@ import { MessageCommandArgumentType } from "src/enums";
 import { MessageCommandArgumentTypeObject } from "./MessageCommandArgumentTypeObject";
 
 export class StringTypeObject<
-O extends boolean = false,
-D extends undefined = undefined,
+  O extends boolean = false,
+  D extends undefined = undefined,
 > extends MessageCommandArgumentTypeObject<
   MessageCommandArgumentType.STRING,
   O,

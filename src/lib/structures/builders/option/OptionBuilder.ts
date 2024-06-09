@@ -6,7 +6,7 @@ export class OptionBuilder {
   get data(): ApplicationCommand.Option.Base {
     return this.#data as Readonly<ApplicationCommand.Option.Base>;
   }
-  
+
   constructor(data: ApplicationCommand.Option.Base) {
     this.#data = data;
   }
