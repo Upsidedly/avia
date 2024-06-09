@@ -1,14 +1,6 @@
 import { Channel, GuildMember, User } from "@lilybird/transformers";
 import { MessageCommandArgumentType } from "src/enums";
 import { Role } from "lilybird";
-import { StringTypeObject } from "./StringTypeObject";
-import { IntegerTypeObject } from "./IntegerTypeObject";
-import { MemberTypeObject } from "./MemberTypeObject";
-import { RoleTypeObject } from "./RoleTypeObject";
-import { ChannelTypeObject } from "./ChannelTypeObject";
-import { UserTypeObject } from "./UserTypeObject";
-import { BooleanTypeObject } from "./BooleanTypeObject";
-import { NumberTypeObject } from "./NumberTypeObject";
 // import { MessageCommandArgumentType } from "src/enums";
 
 export type PositionalArray = MessageCommandArgumentTypeObject[];
@@ -87,36 +79,6 @@ export class MessageCommandArgumentTypeObject<
     return this as unknown as MessageCommandArgumentTypeObject<T, true, V>;
   }
 }
-
-/**
- * MessageCommandArgumentTypeObjects shorthand
- */
-export const m = {
-  string() {
-    return new StringTypeObject();
-  },
-  integer() {
-    return new IntegerTypeObject();
-  },
-  number() {
-    return new NumberTypeObject();
-  },
-  boolean() {
-    return new BooleanTypeObject();
-  },
-  user() {
-    return new UserTypeObject();
-  },
-  channel() {
-    return new ChannelTypeObject();
-  },
-  role() {
-    return new RoleTypeObject();
-  },
-  member() {
-    return new MemberTypeObject();
-  },
-};
 
 export interface MessageCommandArgument<
   T extends MessageCommandArgumentType = MessageCommandArgumentType,

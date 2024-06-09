@@ -10,6 +10,14 @@ import {
   InferArguments,
   MessageCommandArguments,
 } from "./type-objects/MessageCommandArgumentTypeObject.js";
+import { BooleanTypeObject } from "./type-objects/BooleanTypeObject.js";
+import { ChannelTypeObject } from "./type-objects/ChannelTypeObject.js";
+import { IntegerTypeObject } from "./type-objects/IntegerTypeObject.js";
+import { MemberTypeObject } from "./type-objects/MemberTypeObject.js";
+import { NumberTypeObject } from "./type-objects/NumberTypeObject.js";
+import { RoleTypeObject } from "./type-objects/RoleTypeObject.js";
+import { StringTypeObject } from "./type-objects/StringTypeObject.js";
+import { UserTypeObject } from "./type-objects/UserTypeObject.js";
 
 export type CommandInteraction = Interaction<
   ApplicationCommandData<undefined>,
@@ -32,6 +40,36 @@ export interface Meta<
   details?: CommandDetails;
   messageCommandArguments?: Arguments;
 }
+
+/**
+ * MessageCommandArgumentTypeObjects shorthand
+ */
+export const m = {
+  string() {
+    return new StringTypeObject();
+  },
+  integer() {
+    return new IntegerTypeObject();
+  },
+  number() {
+    return new NumberTypeObject();
+  },
+  boolean() {
+    return new BooleanTypeObject();
+  },
+  user() {
+    return new UserTypeObject();
+  },
+  channel() {
+    return new ChannelTypeObject();
+  },
+  role() {
+    return new RoleTypeObject();
+  },
+  member() {
+    return new MemberTypeObject();
+  },
+};
 
 export class Command<
   Args extends MessageCommandArguments = MessageCommandArguments,
