@@ -17,7 +17,8 @@
     "format": "prettier --write .",
     "format:push": "source format-push.sh",
     "prepublishOnly": "rm -rf dist && bun run build",
-    "cliffjump": "bun format:push && bun cj"
+    "cliffjump": "bun format:push && bun cj && bun run publish",
+    "publish": "git push && git push --tags && npm publish"
   },
   "keywords": [
     "bun",
