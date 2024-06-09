@@ -2,7 +2,12 @@ import { OptionBuilder } from "./OptionBuilder.js";
 import { ApplicationCommand, ApplicationCommandOptionType } from "lilybird";
 
 export class StringOptionBuilder extends OptionBuilder {
-  protected pdata: ApplicationCommand.Option.StringStructure;
+  #data: ApplicationCommand.Option.StringStructure;
+
+  override get data(): ApplicationCommand.Option.StringStructure {
+    return this.#data as Readonly<ApplicationCommand.Option.StringStructure>;
+  }
+
   constructor(
     data: Partial<Omit<ApplicationCommand.Option.StringStructure, "type">> = {},
   ) {
@@ -10,20 +15,16 @@ export class StringOptionBuilder extends OptionBuilder {
       ...data,
       type: ApplicationCommandOptionType.STRING,
     } as ApplicationCommand.Option.StringStructure);
-    this.pdata = super.data as ApplicationCommand.Option.StringStructure;
-  }
-
-  override get data() {
-    return this.pdata as Readonly<ApplicationCommand.Option.StringStructure>;
+    this.#data = super.data as ApplicationCommand.Option.StringStructure;
   }
 
   setMaxLength(maxLength: number): this {
-    this.pdata.max_length = maxLength;
+    this.#data.max_length = maxLength;
     return this;
   }
 
   setMinLength(minLength: number): this {
-    this.pdata.min_length = minLength;
+    this.#data.min_length = minLength;
     return this;
   }
 }

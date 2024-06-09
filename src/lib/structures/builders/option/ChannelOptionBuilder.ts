@@ -6,7 +6,12 @@ import {
 } from "lilybird";
 
 export class ChannelOptionBuilder extends OptionBuilder {
-  protected pdata: ApplicationCommand.Option.ChannelStructure;
+  #data: ApplicationCommand.Option.ChannelStructure;
+
+  override get data(): ApplicationCommand.Option.ChannelStructure {
+    return this.#data as Readonly<ApplicationCommand.Option.ChannelStructure>;
+  }
+
   constructor(
     data: Partial<
       Omit<ApplicationCommand.Option.ChannelStructure, "type">
@@ -16,21 +21,17 @@ export class ChannelOptionBuilder extends OptionBuilder {
       ...data,
       type: ApplicationCommandOptionType.CHANNEL,
     } as ApplicationCommand.Option.ChannelStructure);
-    this.pdata = super.data as ApplicationCommand.Option.ChannelStructure;
-  }
-
-  override get data() {
-    return this.pdata as Readonly<ApplicationCommand.Option.ChannelStructure>;
+    this.#data = super.data as ApplicationCommand.Option.ChannelStructure;
   }
 
   addChannelType(channelType: ChannelType): this {
-    this.pdata.channel_types ??= [];
-    this.pdata.channel_types.push(channelType);
+    this.#data.channel_types ??= [];
+    this.#data.channel_types.push(channelType);
     return this;
   }
 
   setChannelTypes(channelTypes: ChannelType[]): this {
-    this.pdata.channel_types = channelTypes;
+    this.#data.channel_types = channelTypes;
     return this;
   }
 }

@@ -12,6 +12,7 @@
   "scripts": {
     "start": "bun .",
     "dev": "bun --watch .",
+    "test": "bun run ./src/test.ts",
     "build": "bun run build.mjs",
     "format": "prettier --write .",
     "prepublishOnly": "rm -rf dist && bun run build",
