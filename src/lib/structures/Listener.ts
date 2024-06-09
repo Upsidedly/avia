@@ -2,7 +2,13 @@ import { DefaultTransformers } from "@lilybird/transformers";
 import { Awaitable, ClientListeners } from "lilybird";
 import { Component } from "./Component.js";
 
-export interface Event<E extends keyof ClientListeners<DefaultTransformers> = keyof ClientListeners<DefaultTransformers>, T extends Required<ClientListeners<DefaultTransformers>> = Required<ClientListeners<DefaultTransformers>>> {
+export interface Event<
+  E extends
+    keyof ClientListeners<DefaultTransformers> = keyof ClientListeners<DefaultTransformers>,
+  T extends Required<ClientListeners<DefaultTransformers>> = Required<
+    ClientListeners<DefaultTransformers>
+  >,
+> {
   name?: string;
   event: E;
   run: (...args: Parameters<T[E]>) => Awaitable<any>;
